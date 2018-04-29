@@ -17,7 +17,7 @@ void	win_init_var(t_mlx *list, int argc, char **argv)
 
 int		set_origins(t_mlx *list)
 {
-	MVX = list->gapy * ROWNB;
+	MVX = (list->gapy * ROWNB) % LA;
 	MVY = list->gapy;
 	return (0);
 }
@@ -45,14 +45,14 @@ void	minandmax(t_mlx *list)
 
 int		set_window_size(t_mlx *list, int argc, char **argv)
 {
-	list->gapx = 40;
+	list->gapx = 20;
 	list->gapy = list->gapx / 5;
 	if (list->gapy <= 0)
 		list->gapy = 1;
 	win_init_var(list, argc, argv);
 	if (list->custom_size == 0)
 	{
-		while ((LA > 2000 || HA > 2000) && list->gapx > 1)
+		while ((LA > 1800 || HA > 1200) && list->gapx > 1)
 		{
 			list->gapx -= 1;
 			list->gapy = list->gapx / 5;
@@ -62,7 +62,7 @@ int		set_window_size(t_mlx *list, int argc, char **argv)
 			HA = (list->gapx * ROWNB) + (list->gapy * PTNB) + 50;
 		}
 	}
-	if (LA > 2000 || HA > 2000)
+	if (LA > 1800 || HA > 1200)
 	{
 		LA = LA > 2000 ? 1999 : LA;
 		HA = HA > 2000 ? 1999 : HA;

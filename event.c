@@ -58,6 +58,7 @@ int		zoomin(t_mlx *list, int key)
 		ft_putstr_fd("State: Cannot zoom in more.\n", 2);
 		return (0);
 	}
+	COEFF = key == 126 ? COEFF * 2 : COEFF / 2;
 	if (DIST < 1)
 		DIST = 1;
 	image_replacer(list);
