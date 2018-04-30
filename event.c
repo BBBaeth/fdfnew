@@ -17,10 +17,10 @@ void	coeff_change(t_mlx *list, int key)
 	float		changer;
 	int			limit;
 
-	changer = 2.5;
+	changer = 0.5;
 	if ((key == 14 || key == 8) && PTNB * ROWNB >= 2500)
-		changer = 0.02;
-	limit = PTNB * ROWNB < 2500 ? 40 : 8;
+		changer = 0.05;
+	limit = PTNB * ROWNB < 2500 ? list->gapx * 20 : list->gapx * 8;
 	if (MAXV == MINV)
 		ft_putstr_fd("State: Map is flat. No ratio to change.\n", 2);
 	else

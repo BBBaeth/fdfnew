@@ -2,8 +2,8 @@
 
 void	win_init_var(t_mlx *list, int argc, char **argv)
 {
-	LA = list->gapx * PTNB + list->gapy * ROWNB + 30;
-	HA = list->gapx * ROWNB + list->gapy * PTNB + 50;
+	LA = list->gapx * PTNB + list->gapy * ROWNB;
+	HA = list->gapx * ROWNB + list->gapy * PTNB;
 	if (argc >= 4 && ft_atoi(argv[2]) > 79 && ft_atoi(argv[3]) > 79
 		&& ft_atoi(argv[2]) < 2001 && ft_atoi(argv[3]) < 2001)
 	{
@@ -58,8 +58,8 @@ int		set_window_size(t_mlx *list, int argc, char **argv)
 			list->gapy = list->gapx / 5;
 			if (list->gapy <= 0)
 				list->gapy = 1;
-			LA = (list->gapx * PTNB) + (list->gapy * ROWNB) + 30;
-			HA = (list->gapx * ROWNB) + (list->gapy * PTNB) + 50;
+			LA = (list->gapx * PTNB) + (list->gapy * ROWNB);
+			HA = (list->gapx * ROWNB) + (list->gapy * PTNB);
 		}
 	}
 	if (LA > 1800 || HA > 1200)
