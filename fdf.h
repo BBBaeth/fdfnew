@@ -111,6 +111,6 @@ void				coeff_change(t_mlx *list, int key);
 void				move_image(int key, t_mlx *list);
 int					key_pressed(int key, t_mlx *list);
 int					set_window_size(t_mlx *list, int argc, char **argv);
-void	minandmax(t_mlx *list);
+void				minandmax(t_mlx *list);
 
 #endif
